@@ -1,0 +1,62 @@
+plugins {
+    id 'com.android.library'
+}
+
+android {
+    compileSdkVersion 30
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.3.0'
+    implementation 'com.google.android.material:material:1.4.0'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+
+    //map.ir
+    implementation 'ir.map:map-sdk:4.0.0'
+    implementation 'ir.map.servicesdk:service-sdk:4.0.3'
+    implementation 'com.mapbox.mapboxsdk:mapbox-sdk-turf:5.6.0'
+    implementation 'com.mapbox.mapboxsdk:mapbox-sdk-services:5.6.0'
+
+    // open Street map
+    implementation 'org.osmdroid:osmdroid-android:6.1.6'
+    implementation 'com.github.MKergall:osmbonuspack:6.6.0'
+
+    //retrofit-OkHttp
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+    implementation ("com.squareup.okhttp3:okhttp:3.12.1"){
+        force = true //API 19 support
+    }
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.12.1'
+
+
+    // service map
+    implementation 'com.google.android.gms:play-services-location:17.1.0'
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+    implementation 'com.google.maps.android:android-maps-utils:1.3.3'
+}

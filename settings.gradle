@@ -1,0 +1,3 @@
+rootProject.name = "GlobalMap"
+include ':app'
+include ':GlobalMap'
